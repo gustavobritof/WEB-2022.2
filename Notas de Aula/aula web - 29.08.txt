@@ -1,0 +1,97 @@
+Aula web - 29/08
+
+||Efeito em cascata
+	->Modo do navegador resolver efeitos conflitantes (aplicaçao do estilo no paragrafo vs span?)
+	
+	-Especificidade/ Hierarquia
+		inline
+		id
+		class/ atribute/ pseudo-class
+		type/ pseudo-element
+
+||CSS Box Model
+	->Caixa é constituída por:
+		Conteúdo:
+			Aquilo que vai ser exibido
+
+		Borda(border):
+			Uma caixa pode possuir até 4 bordas
+			Transparentes e de espessura igual a 0
+
+		Espaçamento(padding):
+			Espaço entre o conteúdo e a borda
+			Transparentes e de espessura igual a 0
+
+		Margem(margin):
+			Espaço da borda pra fora(em relação ao elemento vizinho)
+			Sempre transparentes
+			Cada elemento possui uma margem padrão
+		
+	||Propriedades
+		
+		|Width, Height:
+			Quão largo ou alto deve ser o elemento(altura nao afeta elementos inline)
+			(% não serve para altura, possivel solução: min-height, max-height)
+	
+
+		|Propriedades de bordas
+			border-width:Espessura da borda
+			border-style: Estilo da Borda
+			border-color:Cor da borda
+			border: 1 px solid #FF0213;	//EXEMPLO
+
+		|Propriedades de padding
+			padding-top: Espaçamento superior
+			padding-right: Espaçamento à direita
+			
+			(Para margem é a mesma coisa)
+
+	||Box-sizing vs Border-box
+
+
+		|content-box(padrão)
+			box-sizing:content-box
+			width:300px				(300 PX DE LARGURA SÓ PARA CONTEÚDO)
+			height:200px
+			padding:10px
+			border: 5px solid blue
+			margin: 15 px
+	
+		|border-box
+			box-sizing:border-box
+			width:300px				(O TODO VAI TER 300 PX DE LARGURA)
+			height:200px			
+			padding:10px
+			border: 5px solid blue
+			margin: 15 px
+		
+
+	||Posicionamento
+		Possibilita a construção de layout complexos.
+		
+		|Position
+		
+			static: padrão
+			relative: calcula a posição em relaçao aonde ele deveria estar se fosse static
+			absolute: usa como referência o primeiro ancestral(pai) não estático, se não tiver, ele se baseia no canto esquerdo do navegador
+			fixed: independente de você rolar a barra do navegador, ele continua no mesmo lugar
+			
+		
+	||Layouts
+		Determinado a partir da propriedade float
+		exemplos:serve para colocar uma imagem de forma que o texto contorne ela, ou para colocar uma div do lado da outra
+		
+			clear
+				Propriedade irmã da propriedade float
+				limpa elementos que transbordem em dada direção
+
+			overflow
+				Quando um elemento transborda da div
+				overflow:hidden (o parágrafo se estica para poder caber o elemento que transborda
+			
+			
+		|HTML 5 -> Novas tags
+			<header>,<nav>,<section>,<footer> => Visualmente igual às divs, mas deixam o código mais clean
+
+		
+			

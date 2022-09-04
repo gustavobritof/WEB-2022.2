@@ -1,0 +1,152 @@
+Aula web - 30/08
+
+||Layouts
+
+	!Responsividade
+		->Layout adaptado par diversas resoluções
+
+		|Media queries
+			-Layout muda de acordo com a resolução(layout para pc é diferente do layout para celular)
+		
+			-ex: mobile.css, tablet.css, desktop.css
+	
+				//para mobile
+				@media only screen and (max-width: 400 px){
+					body {
+						background-color: red;
+					}
+				}
+	
+				//para tablet
+				@media only screen and (min-width: 401 px) and (max-width:960 px) {
+				...
+				}
+
+				//para pc
+				@media only screen and (min-width: 961 px){
+				...
+				}
+
+	
+		|Layout Fluído
+			Estica e encolhe de acordo com a largura da tela 
+	
+		|Layout fixo
+			Continua do mesmo tamanho, independente da largura
+
+		|Mobile first
+			Se funciona no mobile, funciona no Desktop
+
+	
+
+	||Flexbox
+	
+		Duas propriedades:
+			flex-direction:
+				linha(row) ou coluna(column)->
+
+		
+			flex-wrap:
+				nowrap->
+
+				wrap->
+		
+			gap -> Espaçamento entre itens
+			
+			flex-grow -> Determina o fator de crescimento
+
+
+			//Tem que mudar o fator display para o layout ser organizado de acordo com o flex.
+			//Exemplo:
+				.container{
+					display:flex;
+				}
+
+			Exemplos:
+
+				flex-direction:column; -> Organiza tudo embaixo do outro	(o normal é um do lado do outro)
+				
+				flex-direction:column-reverse; -> Inverte a ordem das colunas
+
+				flex-grow: 1; -> crescimento do item
+
+		!csstricks.com
+
+
+	||Grid
+
+		Orientado no uso de colunas
+
+		Exemplo:
+		
+		//Tem que mudar o fator display para o layout ser organizado de acordo com o Grid.	
+		//Exemplo:
+
+		.container{
+			display:grid;
+		}
+
+			! grid-template-columns: 30% 50% 20%; -> Define o tamanho de cada coluna
+			! grid-template-rows: 30% 50% 20%; -> Define o tamanho de cada linha
+			! grid-template-areas: 
+			"logo nav nav" 
+			"main main main" 
+			"footer footer footer"; -> Define o local de cada item
+	
+	||Fundamentos de Bootstrap
+
+		Auxilia na construção e organização de layouts responsivos.
+
+			Bootstrap v5 novidades:
+				-Remoção da dependência do jQuery
+				-Adiçao de ícones svg
+
+				!bootstrap.com
+
+			Recursos:
+				-design responsivo
+				-tipografia
+				-formulários
+				-botões
+				-gráficos
+				-navegação
+				-reset css
+				-outros componentes de interface gráfica Web
+				-estilo visual base para maioria das tags
+				-ícones
+				-grids pontos para uso
+
+		!Alternativas para o bootstrap
+			-Materialize CSS
+			-Tailwind CSS
+			-Pure CSS
+
+		Primeiros passos: 
+			A maneira mais rápida de adicionar o Bootstrap ao seu projeto é via CDN
+			(É só importar o link)
+
+		||Bootstrap Grid System
+
+			container -> Onde vai o conteúdo do site
+			grid -> sempre vai ter 12 colunas
+			breakpoints -> Define o tamanho das colunas
+				-xs -> pequeno
+				-sm -> médio
+				-md -> grande
+				-lg -> extra grande
+				-xl -> muito grande
+
+				Breakpoints
+					Blocos de conteúdo que se encaixam em um tamanho específico de tela.
+
+				Contêineres
+					Obrigatório quando você usa o grid system.
+					O contêiner é o elemento que contém todo o conteúdo do site.
+
+				Grid
+					Poderoso, mobile-first de 12 colunas.
+					
+
+
+
+
