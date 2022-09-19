@@ -1,0 +1,114 @@
+||Aula 12/09/2022
+
+    ||Continuação da aula anterior (JAVASCRIPT)
+
+    ||Objeto argumento 
+        -> Permite acessar todos os argumentos(ou parâmetros) de uma função.
+        Rest Parameter
+        
+        ex:
+            let x = soma(1,2,3,4,5,6,7,8,9,10);
+
+            function soma(...args) {
+                let total = 0;
+                for (let arg of args){
+                    total += arg;
+                } 
+                return total;
+            }
+    
+    ||Valor default
+        -> Permite definir um valor padrão para um parâmetro.
+        ex:
+            function soma(a = 0, b = 0) {
+                return a + b;
+            }
+    
+    |Callback
+        -> Função que é passada como parâmetro para outra função.
+        ex:
+            var a =['Hidrogenio',"Helio","Litio","Berilio"];
+
+            var a2 = a.map(function(s){ return s.length;});
+
+    |Clousures
+        -> Aninhamento de funções.
+        ex:
+            function makeAdder(x) {
+                return function(y) {
+                    return x + y;
+                };
+            }
+            var add5 = makeAdder(5);
+            var add10 = makeAdder(10);
+            console.log(add5(2));  // 7
+            console.log(add10(2)); // 12
+
+    |Objetos em JavaScript
+        ->Só usar chaves
+        ex:
+            const pokemon = {
+                nome: "Pikachu",
+                tipo: "Elétrico",
+                nivel: 1,
+                falar: function() {
+                    console.log(return  `${this.nome} ${this.nome});
+                }
+            }
+
+            for(let prop in pokemon) {
+                console.log(`${prop}: ${pokemon[prop]}`);
+            }
+
+            const resultado = pokemon['nome']:
+            console.log(resultado);
+        
+        !Dá pra fazer como no Java também, mas não é recomendado.
+        ex:
+            const pokemon = new Object();
+            pokemon.nome = "Pikachu";
+            pokemon.tipo = "Elétrico";
+            pokemon.nivel = 1;
+            pokemon.falar = function() {
+                console.log(return  `${this.nome} ${this.nome});
+            }
+
+    |Percorrendo um onjeto
+
+            for(let attr in pokemon) {
+                console.log(`${attr}: ${pokemon[attr]}`);
+            }
+
+            for(let [attr, value] of Object.entries(pokemon)) {
+                console.log(`${attr}: ${value}`);
+            }
+            
+    |Função construtora
+        -> Função que cria um objeto.
+        ex:
+            function Pokemon(nome, tipo, nivel) {
+                this.nome = nome;
+                this.tipo = tipo;
+                this.nivel = nivel;
+                this.falar = function() {
+                    console.log(return  `${this.nome} ${this.nome});
+                }
+            }
+
+            const pikachu = new Pokemon("Pikachu", "Elétrico", 1);
+            const charmander = new Pokemon("Charmander", "Fogo", 1);
+
+            console.log(pikachu);
+            console.log(charmander);
+
+||JavaScript na WEB
+
+    ->Voltado para o front-end
+    ->Programas em JS não possuem uma função principal, eles apenas respondem a ações do usuário(eventos).
+    ->No html, o JS é inserido dentro de uma tag <script></script> no final do body.
+
+    ->Parse: É o processo de análise do código fonte de um programa, para verificar se ele está correto.
+    ->Fetch: É o processo de buscar um recurso de uma URL.
+
+    |Document Object Model
+        ->

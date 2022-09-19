@@ -1,0 +1,146 @@
+aula 06/09
+
+||Fundamentos de JavaScript
+	->linguagem de script criada em meados de 1990 pela Netscape Communications 
+    ->Multiparadigma, dá suporte a programação orientada a objetos, imperativa e funcional
+    ->Possui tipagem dinâmica(tipo das variáveis é definido em tempo de execução)
+
+    ! Inicialmente criada para atender a necessidade de interação com o usuário
+        ->Inserir textos dinamicamente em páginas HTML
+        ->Reagir a eventos de interação com o usuário
+        
+    ! Hoje em dia, pode ser utilizado no lado do servidor(Ganhou popularidade com o Node.js).
+
+||Visao geral
+
+    |Tipo de dados
+        ->Number: números
+            Nao há distinção entre inteiros e reais
+            Operadores aritméticos: +, -, *, /, %, ++, --,+=, -=, *=, /=
+
+        ->String: textos
+        ->Boolean: verdadeiro ou falso
+        ->Object: objetos
+        ->Null: nulo
+        ->Undefined: variável não inicializada
+        ->BigInt: números inteiros de tamanho arbitrário
+
+    |Variáveis
+        ->var, let(ECMA6), const
+        !nao use var(antigo)
+
+        ->O tipo da variável não é especificado 
+        ->A funçao typeof retorna o tipo da variável
+
+        |var vs let vs const
+            -var: hoisting(as variáveis são declaradas primeiro no inicio da execução), pode ser alterada(não recomendado)
+            -let: bloco, pode ser alterada
+            -const: bloco, nao pode ser alterada(constantes, imutáveis)
+    
+        |Null e Undefined
+            -Null: Existe, mas foi atribuido com vazio
+            -Undefined: variável declarada, mas não inicializada
+
+        |Tipo String
+            -length: Propriedade que contém o tamanho da string
+            -indexOf: Retorna a posição da primeira ocorrência de uma string
+            -lastIndexOf: Retorna a posição da última ocorrência de uma string
+            -slice: Retorna uma parte da string
+            -concat: Concatena duas strings
+            
+
+    !Comentarios de uma linha
+        //comentario
+
+    |Operadores
+        -Condicionais
+            -Mesma sintaxe do C
+        -Ternário
+            -condicao ? valor1 : valor2
+        -O tipo Booleano
+            -Qualquer valor pode ser usado como booleano
+            -0, NaN, null, undefined, ""(string vazia) são considerados false
+            -Qualquer outro valor é considerado true
+            -Pode-se converter qualquer valor para booleano com a função Boolean()
+        -Operadores Relacionais
+            -   == : comparação de valor
+            -   === : comparação de valor e tipo
+            -   != : diferente de valor
+            -   !== : diferente de valor e tipo
+            -   <, >, <=, >= : menor, maior, menor ou igual, maior ou igual
+        -Operadores Lógicos
+            -   && : E
+            -   || : OU
+            -   ! : NÃO
+        -Avaliação Curto-Circuito
+            -   && : Se o primeiro operando for falso, o segundo não é avaliado
+            -   || : Se o primeiro operando for verdadeiro, o segundo não é avaliado
+            -   Atribuição de valor default
+                exemplo:
+                    let a = variavel || default;
+        -Vetores
+            -Existem duas maneiras de inicializar um vetor
+            -O tamanho do vetor aumenta de acordo com a necessidade
+                |let vetor = [1,2,3,4,5];
+                |let vetor = new Array(1,2,3,4,5);
+            -Acessar um elemento do vetor
+                |vetor[0]
+            -Atribuir um valor a um elemento do vetor
+                |vetor[0] = 10;
+            -Adicionar um elemento ao final do vetor
+                |vetor.push(6);
+            -Remover o último elemento do vetor
+                |vetor.pop();
+            -Remover o primeiro elemento do vetor
+                |vetor.shift();
+            -Adicionar um elemento no início do vetor
+                |vetor.unshift(0);
+            -Remover um elemento do vetor
+                |vetor.splice(0,1);
+            -Concatenar dois vetores
+                |vetor1.concat(vetor2);
+            -Quebrar uma string em um vetor
+                |let vetor = "a,b,c,d".split(",");
+
+        |Estrutura de repetição
+            -while
+            -do while
+            -for
+            -for in e for of(ECMA 2015)
+                |for (let i in vetor) {
+                |   console.log(vetor[i]); //percorre pelo indice
+                |}
+                |for (let i of vetor) {
+                |   console.log(i);     //percorre pelo elemento
+                |}
+            -break e continue
+                |break: sai do laço
+                |continue: vai para a próxima iteração
+
+        |Exceções
+            -try - Obrigatório, usada para delimitar o bloco de código que pode gerar uma exceção
+            -catch - Opcional, usado para tratar a exceção
+            -finally - Opcional, usado para executar um bloco de código após o try/catch
+
+        |Objetos e Funções
+            Funções são objetos, logo possuem propriedades e métodos
+                Métodos:
+                    -apply: Invoca a função com os argumentos passados por um vetor
+                    -call: Invoca a função com os argumentos passados por parâmetro
+                Propriedades:
+                    -length: Número de parâmetros da função
+                    -Constructor: Função construtora
+            
+            |Passagem de parâmetros
+                -Por valor
+                    -Primitivos
+                -Por referência
+                    -Objetos
+                    -Vetores
+                    -Funções
+                    -Outros objetos
+                |Rest Parameter(ECMA 6)
+                    -Permite que uma função receba um número variável de parâmetros
+                    -Os parâmetros são armazenados em um vetor
+                    -Deve ser o último parâmetro da função
+                    -Sintaxe: ...nome

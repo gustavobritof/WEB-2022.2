@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tzeeter</title>
+
+    <!--    Bootstrap importado -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!--    Ícones do bootstrap    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!--    CSS próprio -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+    <!-- Div para container -->
+    <div class="container">
+
+        <!-- Div para a linha -->
+        <div class="row">
+
+            <!-- Div para a coluna 1 -->
+            <div class="col">
+
+                <!-- Navbar -->
+                <div class="navegacao">
+                    <ul>
+                        <img src="img/tiziu.png" alt="logo da rede social">
+
+                        <li> <i class="bi bi-house-door"></i><a href="#home"> Home</a></li>
+                        <li> <i class="bi bi-hash"></i><a href="#explore"></i> Explore</a></li>
+                        <li> <i class="bi bi-bell"></i><a href="#notifications"> Notifications</a></li>
+                        <li> <i class="bi bi-envelope"></i><a href="#messages"> Messages</a></li>
+                        <li> <i class="bi bi-person-fill"></i><a href="#profile"> Profile</a></li>
+                        <li> <i class="bi bi-three-dots"></i><a href="#more"> More</a></li>
+                        <li> <button>Tzeet</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Div para a coluna 2 -->
+            <div class="col-6">
+
+                <!-- Foto e nome do usuário -->
+                <img class="fotoPerfil" src="img/sapo algebrico.jpg" alt="cururu algebrico">
+
+                <h4 class="nomeCompleto">Gustavo Brito</h4>
+                <h5 class="nomeUsuario">@gustavo</h5>
+
+                <!--    Bio    -->
+                <div class="biografia">
+                    <p>Computer Science Student at Federal University of Ceará</p>
+                </div>
+
+                <!-- Botão de editar perfil -->
+                <button name="button">Edit Profile</button>
+
+                <!--  Informações do usuário  -->
+                <div class="informacoes">
+                    <p>
+                        <i class="bi bi-calendar3"></i><a href="#localizacao"> Aracoiaba</a>
+                        <i class="bi bi-geo-alt"></i>Joined June 2019
+                    </p>
+                </div>
+
+
+                <!-- Dados sobre quantidade de tweets, seguidores e seguidos -->
+                <ul>
+                    <li>360 Tzeets</li>
+
+                    <div class="estatisticas">
+                        <li><a href="#following"><span class="numero">2</span> following</a></li>
+                        <li><a href="#followers"><span class="numero">1M</span> followers </a></li>
+                    </div>
+
+                </ul>
+
+                <!--    Publicações     -->
+
+                <div class="row publicacoes">
+                    <div class="col">
+                        <a href="#tweets">Tweets</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#tweetsreplies">Tweets & replies</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#media">Media</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#likes">Likes</a>
+                    </div>
+                </div>
+
+
+                <!-- Tweets -->
+                <div class="tzeet">
+
+                    <img class="fotoPerfil" src="img/sapo algebrico.jpg" alt="cururu algebrico"> Gustavo brito
+                    <i>@gustavo</i>
+                    Aug 22,2022
+                    <p class="textoTzeet">
+                        Em completo estado ablublublé das ideias.
+                    </p>
+
+                    <div class="row acoes">
+                        <div class="col">
+                            <a href="#reply"><i class="bi bi-chat"></i> 60</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#retzeet"><i class="bi bi-arrow-repeat"></i> 50</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#like"><i class="bi bi-heart"></i> 400</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#share"><i class="bi bi-upload"></i></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <!-- Div para a coluna 3 -->
+            <div class="col d-none d-lg-block">
+
+                <!--    Pesquisa    -->
+                <form class="pesquisa">
+                    <i class="bi bi-search "></i>
+                    <input type="text" placeholder="Username">
+                </form>
+
+                <!--    Sugestões de usuários    -->
+                <div class="sugestoes">
+                    <h5> Talvez você curta</h5>
+
+                    <div class="col">
+
+                        <!--    Primeira sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/woman 1.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> Maria</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+                        <!--    Segunda sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/boy 2.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> João</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+                        <!--    Terceira sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/woman 3.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> Joana</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <a href="#mais">Mostrar mais</a>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+</body>
+
+</html>

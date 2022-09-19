@@ -1,0 +1,102 @@
+||Aula web 13/09
+
+    ||Document object model
+        -A maioria dos códigos JS manipulam uma página HTML
+        -Podemos verificar o estado de um elemento
+            ex: verificar se um checkbox está marcado
+        -Podemos alterar o estado de um elemento
+            ex: marcar um checkbox
+        -Podemos mudar o estilo de um elemento
+            ex: mudar a cor de um elemento
+
+        |Elemento DOM 
+            Tipos de nós:
+            1> Document :Nó raiz de todos documentos HTML
+            2> Element :Nós que representam elementos HTML
+            3> Text :Nós que representam texto dentro de um elemento
+            4> Comment :Nós que representam comentários dentro de um elemento
+            5> Attribute :Nós que representam atributos de um elemento
+
+        |Propriedades de um objeto DOM
+            -addEventListener() : Adiciona um evento a um elemento
+            -appendChild() : Adiciona um nó na árvore DOM
+            -children : Retorna uma coleção de elementos filhos
+            -classList : Retorna uma coleção de classes do elemento
+            -className : Retorna uma string com o nome da classe do elemento
+            -getAttribute() : Retorna o valor de um atributo
+            -id : Retorna uma string com o id do elemento
+            -innerHTML : Retorna uma string com o HTML interno do elemento
+            -parentNode : Retorna o nó pai do elemento
+
+        |Acessando elementos do DOM
+            -document.getElementById(id:string) : Element -> Retorna um elemento pelo id
+            -document.getElementsByClassName(className:string) : HTMLCollection -> Retorna uma coleção de elementos HTML pela classe
+            -document.getElementsByTagName(tag:string) : Element-> Retorna uma coleção de elementos pela tag
+            -document.getElementsByName(name:string) : NodeElement -> Retorna uma coleção de elementos pelo nome
+            -document.querySelector(selector) : Element -> Retorna o primeiro elemento que corresponde ao seletor CSS (global)
+            -document.querySelectorAll(selector) : NodeList -> Retorna uma coleção de elementos que correspondem ao seletor CSS
+
+            HTMLCollection : Coleção de elementos HTML
+            NodeList : Coleção de nós
+                ex:
+                    const wrapper = document.querySelector('#wrapper');
+                    wrapper.getElementsByTagName('p');
+                    wrapper.getElementsByClassName("active");
+                    wrapper.getElementsByName("nome");
+
+        |Acessando atributos do DOM
+            -element.getAttribute(name:string) : string -> Retorna o valor de um atributo
+            -element.setAttribute(name:string, value:string) : void -> Define o valor de um atributo
+            -element.hasAttribute(name:string) : boolean -> Verifica se um elemento possui um atributo
+            -element.removeAttribute(name:string) : void -> Remove um atributo
+                
+                ex:
+                <img src="img.jpg" alt="Imagem" class="me me-sm">
+                const img = document.querySelector('.me');
+                img.alt; // Imagem
+                img.src; // img.jpg
+                img.class; // Retorna Undefined
+                img.className; // me me-sm(use esse)
+
+                ex:
+                <img src="img.jpg" alt="Imagem" class="me me-sm">
+                const img = document.querySelector('.me');
+                img.classList; // Retorna "me me-sm"
+                img.classList.add('me-lg'); // Adiciona a classe me-lg
+                img.classList.remove('me-sm'); // Remove a classe me-sm
+                img.classList.contains('me'); // Verifica se a classe me existe
+                img.classList.toggle('active'); // Adiciona ou remove a classe active, só funciona se a classe existir, retorna true ou false
+                img.classList; // Retorna "me me-lg active"
+
+        |Ajustando estilos 
+                <button id="clickme">Color me</button>
+                let clickme = document.getElementById(clickme');
+                clickme.style.color = 'red';
+                clickme.style.backgroundColor = 'yellow'; (use camelCase)
+                clickme.style.fontSize = "42pt";(font-size não funciona)
+
+                !Boas práticas ao aplicar o estilo DOM
+                    -Use o mínimo de css no código JS
+                    -Use JS para atribuir classes e Ids de elementos
+                    -Defina os estilos dessas classes e ids nos arquivos CSS
+
+        |Value vs. InnerHTML
+            -value : Elementos parte de formulários
+            -innerHTML : texto entre a abrtura e fechamento de uma tag
+
+            ex:
+            <input type="text" id="name" value="John Doe">
+            <p id="name"></p>
+
+            let name = document.getElementById('name');
+            name.value; // John Doe
+            name.innerHTML; // Retorna vazio
+
+            ex:
+            <input type="text" id="name" value="John Doe">
+            <p id="name"></p>
+
+            let name = document.getElementById('name');
+            name.value = 'Jane Doe';
+            name.innerHTML = 'Jane Doe';
+            
