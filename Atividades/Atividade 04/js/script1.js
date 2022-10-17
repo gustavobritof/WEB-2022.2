@@ -1,7 +1,7 @@
 
 let input1 = document.querySelector('#inputTextArea1');
 //Pegando o tam maximo do textarea(140)
-const tamMaximo = 140;
+const tamMaximo1 = 140;
 
 let contador1 = document.querySelector('#contador1');
 
