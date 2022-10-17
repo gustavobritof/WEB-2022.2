@@ -1,0 +1,62 @@
+Aula web 20/09
+
+    ||Fundamentos de TypeScript
+        -É uma linguagem fortemente tipada construída em cima do Javascript
+        -Criada e mantida pela Microsoft
+        -Adiciona coisas ao Javascript(tipagem, por exemplo)
+        -Qualquer código Javascript é válido em TypeScript
+        -Projetada para ser usada no front e no back
+        -É uma linguagem compilada/traduzida para JS
+
+        |Características
+            -Tem como principal características o sistema de tipos
+                ->É possível determinar os tipos de variáveis e parâmetros
+                ->Por meio de checagem estática, o compilador verifica se o código está correto
+                ->Interfaces
+                ->Classes abstratas
+                ->Modificadores de visibilidade
+                ->Generics(arraylist tipado)
+                ->Optionals
+                ->Function Overloads
+                ->Decorations
+            -Navegadores não entendem TypeScript, eles convertem por meio de um transpilador ou compilador
+
+        |Vantagens
+            -Checagem de tipos estática(opcional)
+               ->Compilador alerta sobre erros
+            -Maior legibilidade
+            -Otimização de código
+
+        |Configuração de ambiente
+            ->Instalar o node
+            ->Instalar o compilador de TypeScript
+                npm install -g typescript
+        
+            Compilando um aquivo .TypeScript
+                $ tsc nomeDoArquivo.ts
+                    ->Gera um arquivo .js
+            Passando pelo node
+               $ node nomeDoArquivo.js
+
+        !tsconfig.json -> Define a raiz do projeto e as opções de compilação requeridas pelo projeto
+            -AlwaysStrict -> O compilador gera código em modo estrito
+            -TypeChecking -> O compilador faz checagem de tipos
+
+        |Sistema de tipos e inferência de tipos
+            any -> Qualquer tipo
+            null -> Nulo
+            undefined -> Indefinido
+            Tipos:
+                Primitivos:
+                    number -> Números
+                    string -> Strings
+                    boolean -> Booleanos
+                    enum -> Enumerações
+                    void -> Sem retorno
+                Objetos:
+                    class -> Classes
+                    interface -> Interfaces
+                    array  -> Arrays()
+                    literals -> Literais(1, "a", true)
+
+

@@ -1,0 +1,130 @@
+Aula web 26/09
+
+||Fundamentos de Node.js
+    
+    |Introdução
+        -O que é Node.js?
+            -> É uma plataforma de tempo de execução de código aberto que permite que desenvolvedores criem aplicações do lado do servidor em JavaScript.
+            -> Executada diretamente no SO, fora do contexto de um navegador.
+            -> Provê suporte a API mais tradicionais dos SO's
+                -Ex: HTTP, FileSystem
+        -Características
+            -> Node.js apps são executadas em um único processo
+                -não é necessaria a criaçao de uma thread para cada requisição(não há concorrência de threads no servidor)
+        -Vantagens
+            ->Excelente desempenho e escalabilidade
+            ->Escrito em JavaScript,familiar para desenvolvedores web
+            ->Grande comunidade
+            ->O gerenciador de pacotes NPM, provê uma grande variedade de bibliotecas reusáveis
+            ->Portabilidade
+        
+    |Criando um projeto Node
+        -node app.js
+
+    |NPM - Node package manager
+        -> Inicialmente era uma maneira de instalar bibliotecas de terceiros
+        -> Possui mais de 1 milhão de pacotes
+
+    !Para criar um projeto Node, é necessario um arquivo package.json
+        -Lista todas as dependencias do projeto
+        -Torna o processo de build reproduzível e portanto mais fácil de ser compartilhado
+        - A maneira mais fácil de criar um package.json é executando o comando npm init
+        -npm init -yes -> cria um package.json com as configurações padrões
+    
+    |NPM  e suas funções
+        -Instalar e atualizar dependencias -> npm install ou npm install <nome do pacote> e npm update ou npm update <nome do pacote>
+        -Versionamento
+        -execução de tarefas
+
+    !Pacotes populares
+        -Express
+        -Mongoose
+        -Axios
+        -Nodemon
+        -Dayjs
+
+||Formulários HTML
+    -Conjunto de elementos de interface que permitem que o usuário troque informações com o servidor
+    -<form> -> define um formulário
+    -action -> define a ação a ser executada quando o formulário for enviado
+    -method -> define o método HTTP a ser usado quando o formulário for enviado(POST,GET,PUT,DELETE)
+    -novalidate -> desabilita a validação do formulário
+    -<input> -> define um campo de entrada
+        - O atributo name especifica o nome do parâmetro enviado ao servidor
+        - O atributo value especifica o valor inicial do campo
+        - O atributo type especifica o tipo de campo
+            -text -> campo de texto
+            -password -> campo de senha
+            -checkbox -> caixa de seleção
+            -radio -> botão de opção
+            -submit -> botão de envio
+            -file -> campo de arquivo
+            -number -> campo numérico(HTML5)
+            -email -> campo de email(HTML5)
+        
+    -text e password
+        -disabled -> desabilita o campo
+        -readonly -> indica se o campo pode ser modificado
+        -minlength -> especifica o número mínimo de caracteres(campos com texto)
+        -min -> especifica o valor mínimo
+        -max -> especifica o valor máximo
+        -maxlength -> especifica o número máximo de caracteres
+        -pattern -> especifica um padrão de caracteres(bom pra telefone)
+        -placeholder -> especifica um texto de ajuda
+        -required -> indica que o campo é obrigatório
+        -size -> especifica o tamanho do campo
+        -step -> especifica o intervalo entre valores válidos
+        -value -> especifica o valor inicial do campo
+
+    -textarea
+        -A quantidade de texto pode ou não ser limitada
+        -cols -> especifica o número de colunas
+        -rows -> especifica o número de linhas
+        -wrap -> especifica como o texto deve ser quebrado
+            -hard -> quebra de linha
+            -soft -> quebra de linha
+        
+    -checkbox
+        -checked -> indica se o campo está selecionado
+        -value -> especifica o valor do campo
+        -Todas as marcadas serão enviadas com valor on para o servidor
+
+    -radio
+        -checked -> indica se o campo está selecionado
+        -value -> especifica o valor do campo
+        -Somente uma marcada será enviada com valor on para o servidor
+
+    -label 
+        -Representa uma legenda para um campo de entrada
+        -Pode estar associado a um elemento de controle
+        -O label pode ser alvo de regras de estilo CSS
+        -O label pode ser clicado para focar o elemento de controle associado
+        -Importante para leitores de tela
+        ex:
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+        !id não é chamado no backend, name é
+
+    -submit
+        -Representado por um botão
+        -Quando clicado, envia os dados do formulário para o servidor
+        -O valor do atributo value é o texto que aparece no botão
+
+    -GET vs POST
+        -GET
+            -Os dados são enviados na URL
+            -Os dados são limitados a 255 caracteres
+            -Os dados são armazenados no histórico do navegador
+            -Os dados são visíveis para todos
+            -Os dados são enviados apenas uma vez
+            -Não é seguro para dados sensíveis
+            -Ideal para requisições de leitura
+        -POST
+            -Os dados são enviados no corpo da requisição
+            -Os dados não são limitados
+            -Os dados não são armazenados no histórico do navegador
+            -Os dados não são visíveis para todos
+            -Os dados podem ser enviados várias vezes
+            -É seguro para dados sensíveis
+            -Ideal para requisições de escrita

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tzeeter</title>
+
+    <!--    Bootstrap importado -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!--    Ícones do bootstrap    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!--    CSS próprio -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--    Script para o modal     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Div para container -->
+    <div class="container">
+
+        <!-- Div para a linha -->
+        <div class="row">
+
+            <!-- Div para a coluna 1 -->
+            <div class="col">
+
+                <!-- Navbar -->
+                <div class="navegacao">
+                    <ul>
+                        <img src="img/tiziu.png" alt="logo da rede social">
+
+                        <li> <i class="bi bi-house-door-fill"></i><a href="index.html"> Home</a></li>
+                        <li> <i class="bi bi-hash"></i><a href="#explore"></i> Explore</a></li>
+                        <li> <i class="bi bi-bell"></i><a href="#notifications"> Notifications</a></li>
+                        <li> <i class="bi bi-envelope"></i><a href="#messages"> Messages</a></li>
+                        <li> <i class="bi bi-person"></i><a href="profile.html"> Profile</a></li>
+                        <li> <i class="bi bi-three-dots"></i><a href="#more"> More</a></li>
+                        <li> <button type="button" id="tzeet" data-bs-toggle="modal" data-bs-target="#meuModal">Tzeet</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Div para a coluna 2 -->
+            <div class="col-6">
+                <h4>Home</h4>
+                <!-- Div para o formulário de envio de um tzeet -->
+                <div class="formularioDeEnvio d-flex">
+
+                    <div class="container">
+                        <div class="row d-inline-flex">
+                            <div class="col-auto d-inline-flex align-items-center">
+                                <img src="img/sapo algebrico.jpg" alt="foto de perfil" class="">
+                            </div>
+                            <div class="col">
+                                <textarea name="input" id="inputTextArea" 
+                                placeholder="O que você está pensando?" class="input border-0"></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-2">
+
+                                </div>
+                                <div class="configReply col align-items-start border-bottom p-2">
+                                        <a href="#"><i class="bi bi-globe"></i> Everyone can reply</a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                            <div class="row">
+                                <div class="col-auto">
+
+                                </div>
+                                <div class="multimedia p-2 col">
+                                        <a href=""><i class="bi bi-image"></i></a>
+                                        <a href=""><i class="bi bi-filetype-gif"></i></a>
+                                        <a href=""><i class="bi bi-emoji-smile"></i></a>
+                                        <a href=""><i class="bi bi-bar-chart"></i></a>
+                                        <a href=""><i class="bi bi-calendar-event"></i></a>
+                                        <a href=""><i class="bi bi-geo-alt"></i></a>
+                                </div>
+                                <div class="col">
+
+                                </div>
+                                <div class="col statuseEnvio p-2">
+                                        <!--Contador-->
+                                        <span id="contador"></span>
+                                        <!--Adicionar Tzeet-->
+                                        <a href="#"><i class="bi bi-plus-circle border-start border-2 p-2"></i></a>
+                                        <!--Botão de enviar-->
+                                        <button id="botaoEnviarTzeet">Enviar</button>
+                                </div>
+                                </div>
+                            </div>
+
+                </div>
+
+
+
+                <!--    Publicações     -->
+
+                <div class="row publicacoes">
+                    <div class="col">
+                        <a href="#tweets">Tweets</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#tweetsreplies">Tweets & replies</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#media">Media</a>
+                    </div>
+
+                    <div class="col">
+                        <a href="#likes">Likes</a>
+                    </div>
+                </div>
+
+
+                <!-- Tweets -->
+                <div class="tzeet">
+
+                    <img class="fotoPerfil" src="img/sapo algebrico.jpg" alt="cururu algebrico"> Gustavo brito
+                    <i>@gustavo</i>
+                    Aug 22,2022
+                    <p class="textoTzeet">
+                        Em completo estado ablublublé das ideias.
+                    </p>
+
+                    <div class="row acoes">
+                        <div class="col">
+                            <a href="#reply"><i class="bi bi-chat"></i> 60</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#retzeet"><i class="bi bi-arrow-repeat"></i> 50</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#like"><i class="bi bi-heart"></i> 400</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="#share"><i class="bi bi-upload"></i></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Div para a coluna 3 -->
+            <div class="col d-none d-lg-block">
+
+                <!--    Pesquisa    -->
+                <form class="pesquisa">
+                    <i class="bi bi-search lupa"></i>
+                    <input type="text" placeholder="Username">
+                </form>
+
+                <!--    Sugestões de usuários    -->
+                <div class="sugestoes">
+                    <h5> Talvez você curta</h5>
+
+                    <div class="col">
+
+                        <!--    Primeira sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/woman 1.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> Maria</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+                        <!--    Segunda sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/boy 2.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> João</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+                        <!--    Terceira sugestão    -->
+                        <div class="row">
+                            <div class="col">
+                                <img src="img/woman 3.png" class="fotoUsuario">
+                            </div>
+
+                            <div class="col">
+                                <a href="#profile"> Joana</a>
+                            </div>
+
+                            <div class="col">
+                                <input type="button" value="Seguir">
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a href="#mais">Mostrar mais</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--    Modal   -->
+
+    <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">    
+            <div class="formularioDeEnvio d-flex">
+
+                <div class="container">
+                    <div class="row d-inline-flex">
+                        <div class="col-auto d-inline-flex align-items-center">
+                            <img src="img/sapo algebrico.jpg" alt="foto de perfil" class="">
+                        </div>
+                        <div class="col">
+                            <textarea name="input" id="inputTextArea1" 
+                            placeholder="O que você está pensando?" class="input border-0"></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-2">
+
+                            </div>
+                            <div class="configReply col align-items-start border-bottom p-2">
+                                    <a href="#"><i class="bi bi-globe"></i> Everyone can reply</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                            </div>
+                            <div class="multimedia p-2 col">
+                                    <a href=""><i class="bi bi-image"></i></a>
+                                    <a href=""><i class="bi bi-filetype-gif"></i></a>
+                                    <a href=""><i class="bi bi-emoji-smile"></i></a>
+                                    <a href=""><i class="bi bi-bar-chart"></i></a>
+                                    <a href=""><i class="bi bi-calendar-event"></i></a>
+                                    <a href=""><i class="bi bi-geo-alt"></i></a>
+                            </div>
+                            <div class="col">
+
+                            </div>
+                            <div class="col statuseEnvio p-2">
+                                    <!--Contador-->
+                                    <span id="contador1"></span>
+                                    <!--Adicionar Tzeet-->
+                                    <a href="#"><i class="bi bi-plus-circle border-start border-2 p-2"></i></a>
+                                    <!--Botão de enviar-->
+                                    <button id="botaoEnviarTzeet1" data-bs-dismiss="modal">Enviar</button>
+                            </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+        <script src="js/script.js"></script>
+        <script src="js/script1.js"></script>
+</body>
+
+</html>

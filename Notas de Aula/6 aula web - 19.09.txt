@@ -1,0 +1,89 @@
+||aula web 19/09
+
+    ||Tratamento de eventos com JS
+        -Antigamente, js era utilizado para exibir mensagens para os usuários e para validar dados
+
+        -1º passo: definir um handler
+            É possivel definir um handler de 3 formas:
+                -Inline -> 
+                            <input type="button" value="Clique aqui" onclick="alert('Você clicou no botão!')">
+                -Tradicional -> 
+                                let okButton = document.getElementById('ok');
+                                okButton.onclick = minhafuncao();
+                -W3C (Melhor opção) ->
+                        element.addEventListener('click',startDragDrop,false);
+                        element.addEventListener('click',spyOnUser,false);
+
+                        element.removeEventListener('click',startDragDrop,false);
+
+        -2º passo: definir o evento
+            Eventos de teclado:
+                -onkeydown -> quando uma tecla é pressionada
+                -onkeypress -> quando uma tecla é pressionada e solta
+                -onkeyup -> quando uma tecla é solta
+            
+            Eventos de mouse:
+                -click -> quando um botão do mouse é pressionado e solto
+                -dblclick -> quando um botão do mouse é pressionado e solto duas vezes
+                -mousedown -> quando um botão do mouse é pressionado
+                -mouseup -> quando um botão do mouse é solto
+                -mousemove -> quando o mouse é movido
+                -mouseover -> quando o mouse é movido sobre um elemento
+                -mouseout -> quando o mouse é movido fora de um elemento
+
+            Eventos HTML:
+                -load -> quando um documento é carregado
+                -unload -> quando um documento é descarregado
+                -abort -> quando uma imagem é interrompida
+                -error -> quando um erro ocorre
+                -select -> quando um texto é selecionado
+                -resize -> quando a janela é redimensionada
+                -scroll -> quando a janela é rolada
+                -submit -> quando um formulário é enviado
+                -reset -> quando um formulário é resetado
+                -focus -> quando um elemento recebe o foco
+                -blur -> quando um elemento perde o foco
+                -change -> quando um elemento é alterado
+
+
+
+    ||Temporizadores
+        O JS provê dois mecanismos de tratar eventos relacionados ao tempo:
+            -setTimeout() ->   
+                                Executa uma função ou avalia uma expressão após um determinado tempo
+            -setInterval() ->   
+                                Executa uma função ou avalia uma expressão a cada intervalo de tempo
+
+            Ambos retornam um id que representa o cronômetro
+
+            Para cancelar um temporizador, use a função clearTimeout() ou clearInterval()
+
+            EXEMPLOS:
+
+            setTimeout ex:
+                document.getElementById(“myButton”).addEventListener(“click”, delayMsg);
+
+                function delayMsg() {
+                    setTimeout(legendary, 3000);
+                    document.getElementById("output").innerHTML = "Wait for it...";
+                }
+                function legendary() {
+                    document.getElementById("output").innerHTML = “Legendaaarrryyyy!!!”;
+                }
+
+
+            setInterval ex:
+                document.getElementById(“myButton”).addEventListener(“click”, delayMsg);
+                let timer = null;
+                function delayMsg2() {
+                    if (timer == null) {
+                     timer = setInterval(chamaMae, 1000);
+                    } else{
+                    clearInterval(timer);
+                    timer = null;
+                    }
+                }
+                function chamaMae() {
+                document.getElementById("output").innerHTML += “Mãe!";
+
+        

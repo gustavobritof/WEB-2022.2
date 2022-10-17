@@ -1,0 +1,46 @@
+Aula web 03/10
+
+    ||Backend, Frontend e API REST
+        
+        ||Arquitetura MVC
+            ->Model, View e Controller
+            ->Controller: Faz a ligação entre o usuário e o sistema
+                -Aguarda a requisição http
+                    -Aceita entradas e converte para comandos para view ou model
+                    -Delega as regras de negócio para modelos e serviços
+                -Retorna com uma resposta significativa
+            ->View: Mostra os dados pro usuário
+                -Representação visual da nossa aplicação(GUI - Graphical User Interface)
+                -Sempre deve estar atualizado com a camada de modelo
+            ->Model: Representação do conhecimento do domínio da aplicação
+                -Gerencia os dados, a lógica e as regras da aplicação
+                -Independente da interface de usuário
+                -Encapsula os dados do BD
+                    -Tabelas
+            
+        ||API REST
+            ->Apresenta funções e regras que permitem a interação e comunicação entre diferentes aplicativos
+            ->Facilitam a integracão entre sistemas
+
+            |REST
+                -Estilo Arquitetural para sistemas distribuídos de hipermídia
+                -A manipulação de recursos é feita através de requisições HTTP
+                    -O formato de dados é o JSON
+                ->Princípios REST
+                    -Cliente e Servidor
+                        -O cliente não deve saber o que o servidor está fazendo
+                        -O servidor não deve saber o que o cliente está fazendo
+                    -Sem estado
+                        -O servidor não deve guardar informações do cliente
+                    -Cache
+                        -O cliente pode guardar uma cópia do servidor
+                    -Interface uniforme
+                        -O cliente deve saber como interagir com o servidor
+                    -Código sob demanda
+                        -O cliente pode enviar código para o servidor
+            ->Anatomia de uma requisição HTTP
+                http://minhaapi.com.br/cerveja?nome=skol
+                -Protocolo: http
+                -Host: minhaapi.com.br
+                -Path: cerveja
+                -Query String: nome=skol
