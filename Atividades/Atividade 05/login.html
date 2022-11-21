@@ -9,22 +9,42 @@
 
 <body>
     <div class="container">
-        <div class="box">
-            <h4>Entre no Tzeet agora mesmo</h4>
+        <div class="card box">
+            <div class="card-body">
+                <img src="img/tiziu.png" class="logo" alt="tiziu">
+                <h4>Entre no Tzeet agora mesmo</h4>
+                
+                <form action="">
 
-            <div class="form-floating mb-2 ">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
+                    <!-- Input de e-mail -->
+                <div class="form-floating mb-2 ">
+                    <input type="email" id="inputEmail" class="form-control" required placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                    <span id="spanTexto"></span>
+                </div>
+                
+                <!-- Input de password -->
+                <div class="form-floating mb-2">
+                    <input type="password" id="inputSenha" class="form-control"required placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                    <a href="#recuperasenha">Esqueceu a senha?</a>
+                    <br>
+                    <a href="signup.html"><button type="submit" id="botaoLogin" class="botao">Entrar</button></a>
+                </div>
+
+                </form>
+                
+
+                <p>Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>          
+
+            </div>
+            
+                
         </div>
 
     </div>
 
-
+    <script src="js/scriptlogin.js"></script>
 </body>
 
 </html>

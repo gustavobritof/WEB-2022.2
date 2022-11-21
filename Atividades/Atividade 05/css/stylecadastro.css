@@ -2,23 +2,16 @@ body{
     background-color: #d4d3d3;
 }
 
-.box{
-    width: 400px;
-    height: 400px;
-    background-color: #fff;
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 20px;
-    border-radius: 10px;
+.modal{
     box-shadow: 0px 0px 10px 0px #000;
-    align-items: center;
 }
 
-.box .logo{
-    transform: translateX(135px);
+.modal .modal-body form .alertEmail{
+    color: #868D94; 
+    font-size: 0.9em;
 }
 
-.box .botao{
+.modal #botaoCadastro{
     background-color: rgb(11, 94, 215);
     color: white;
     border: none;

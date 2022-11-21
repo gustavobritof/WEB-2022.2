@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylecadastro.css">
+    
+</head>
+<body>
+
+    <div class="modal" id="meuModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Criar conta</h5>
+              <a href="login.html"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></a>
+            </div>
+            <div class="modal-body">
+              
+              <form>
+                
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="inputNome"  placeholder="Nome">
+                  <label for="inputNome">Nome:</label>
+                  <span id="spanNome"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                  
+                  <input type="email" class="form-control" id="inputEmail"  placeholder="name@example.com">
+                  <label for="inputEmail" class="form-label">E-mail:</label>
+                  <span id="spanEmail"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                  
+                  <input type="password" class="form-control" id="inputSenha"  placeholder="Senha:">
+                  <label for="inputSenha" class="form-label">Senha:</label>
+                  <span id="spanSenha"></span>
+                </div>
+
+                <div class="form-floating mb-3">
+                 
+                  <input type="password" class="form-control" id="inputConfirmacaoSenha"  placeholder="Confirmação da Senha:">
+                  <label for="inputConfirmacaoSenha" class="form-label">Confirmação da Senha:</label>
+                  <span id="spanConfirmacaoSenha"></span>
+                </div>
+
+                    <h5>Data de nascimento</h5>
+                    <span class="alertEmail">Isso não será exibido publicamente. Confirme sua própria idade, mesmo se essa conta for de empresa, de um animal de estimação ou outros.</span>
+
+                    <div class="form-floating mt-2 mb-2 row">
+                        <div class="form-floating col-6">
+                          
+                          <select class="form-select" id="selectMes" required aria-label="Selecionar mês" >
+                            <option disabled selected></option>
+                          </select>
+                          <label for="selectMes" class="form-label">Mês:</label>
+                          <span class="SpanMes"></span>
+
+                        </div>
+
+                        <div class="form-floating col-3">
+
+                          <select class="form-select" id="selectDia" required aria-label="Selecionar Dia">
+                            <option disabled selected></option>
+                          </select>
+                          <label for="selectDia" class="form-label">Dia:</label>
+                          <span class="SpanDia"></span>
+
+                        </div>
+                        <div class="form-floating col-3">
+
+                          <select class="form-select" id="selectAno" required aria-label="Selecionar Ano">
+                            <option disabled selected></option>
+                          </select>
+                          <label for="selectAno" class="form-label">Ano:</label>
+                          <span class="SpanAno"></span>
+                        </div>  
+
+
+                    </div>
+                    
+                    
+
+                    <div class="row mb-2">
+                      <div class="col-11">
+                        <label for="checkAtividade" class="form-check-label">Receba e-mails sobre sua atividade no Tzeeter e recomendações.</label>
+                      </div>
+                     
+                    <div class="form-check col-1 mt-2">
+                      <input class="form-check-input" type="checkbox"  id="checkAtividade">
+                    </div>
+                    </div>
+
+                    <div class="radiosPrivacidade">
+                      <label for="">Você concorda com nossos Termos, com a Política de Privacidade e com o Uso de Cookies?</label>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input RadioPrivacidade" type="radio" name="flexRadioDefault" id="checkPrivacidade1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Sim
+                        </label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input RadioPrivacidade" type="radio" name="flexRadioDefault" id="checkPrivacidade2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Não
+                        </label>
+                      </div>
+
+                    </div>
+                
+    
+
+
+              
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="botaoCadastro">Se inscrever</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+  
+ <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="js/scriptcadastro.js"></script>
+
+   
+
+</body>
+</html>
